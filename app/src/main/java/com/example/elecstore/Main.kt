@@ -2,5 +2,5 @@ package com.example.elecstore
 
 
 fun main(){
-    println("Moi kamerutset!")
+    println("Moi kamerutset! Kokeilkaas pullata tätä!")
 }
