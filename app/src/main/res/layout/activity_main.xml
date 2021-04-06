@@ -62,11 +62,12 @@
         android:layout_marginRight="8dp"
         android:background="@drawable/raspberry_pi"
         android:textColor="@color/black"
-        app:backgroundTint="null"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+    <!-- Added "@" to the null so it wont break the code -->
 
     <Button
         android:id="@+id/buttonKomponentit"
@@ -79,11 +80,13 @@
         android:layout_marginRight="8dp"
         android:background="@drawable/komponentit"
         android:textColor="@color/black"
-        app:backgroundTint="null"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+    <!-- Added "@" to the null so it wont break the code -->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
