@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp"
+        tools:context="">
+
+        <EditText
+            android:id="@+id/editTextSearch2"
+            android:layout_width="268dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="Hae"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonHae2"
+            android:layout_width="88dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="Hae"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editTextSearch2"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle2" />
+
+        <TextView
+            android:id="@+id/textViewTitle2"
+            android:layout_width="365dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Komponentit"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewTuotekuvaKO1"
+            android:layout_width="144dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSearch2"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/textViewTuotenimiKO1"
+            android:layout_width="204dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="48dp"
+            android:text="Nimi"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO1"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSearch2" />
+
+        <TextView
+            android:id="@+id/textViewHintaText"
+            android:layout_width="64dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="50dp"
+            android:text="Hinta:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO1" />
+
+        <TextView
+            android:id="@+id/textViewHintaKO1"
+            android:layout_width="134dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:gravity="end"
+            android:text="X.YY€"
+            android:textColor="#3CB043"
+            android:textSize="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO1" />
+
+        <ImageView
+            android:id="@+id/imageViewTuotekuvaKO2"
+            android:layout_width="144dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO1"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/textViewTuotenimiKO2"
+            android:layout_width="204dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="48dp"
+            android:text="Nimi"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO2"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO1" />
+
+        <TextView
+            android:id="@+id/textViewHintaText2"
+            android:layout_width="64dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="50dp"
+            android:text="Hinta:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO2"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO2" />
+
+        <TextView
+            android:id="@+id/textViewHintaKO2"
+            android:layout_width="134dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:gravity="end"
+            android:text="X.YY€"
+            android:textColor="#3CB043"
+            android:textSize="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO2" />
+
+        <ImageView
+            android:id="@+id/imageViewTuotekuvaKO3"
+            android:layout_width="144dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO2"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/textViewTuotenimiKO3"
+            android:layout_width="204dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="48dp"
+            android:text="Nimi"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO3"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO2" />
+
+        <TextView
+            android:id="@+id/textViewHintaText3"
+            android:layout_width="64dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="50dp"
+            android:text="Hinta:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO3"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO3" />
+
+        <TextView
+            android:id="@+id/textViewHintaKO3"
+            android:layout_width="134dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:gravity="end"
+            android:text="X.YY€"
+            android:textColor="#3CB043"
+            android:textSize="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO3" />
+
+        <ImageView
+            android:id="@+id/imageViewTuotekuvaKO4"
+            android:layout_width="144dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO3"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/textViewTuotenimiKO4"
+            android:layout_width="204dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="48dp"
+            android:text="Nimi"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO4"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO3" />
+
+        <TextView
+            android:id="@+id/textViewHintaText4"
+            android:layout_width="64dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="50dp"
+            android:text="Hinta:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO4"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO4" />
+
+        <TextView
+            android:id="@+id/textViewHintaKO4"
+            android:layout_width="134dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:gravity="end"
+            android:text="X.YY€"
+            android:textColor="#3CB043"
+            android:textSize="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO4" />
+
+        <ImageView
+            android:id="@+id/imageViewTuotekuvaKO5"
+            android:layout_width="144dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO4"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/textViewTuotenimiKO5"
+            android:layout_width="204dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="48dp"
+            android:text="Nimi"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO5"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO4" />
+
+        <TextView
+            android:id="@+id/textViewHintaText5"
+            android:layout_width="64dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="50dp"
+            android:text="Hinta:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO5"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO5" />
+
+        <TextView
+            android:id="@+id/textViewHintaKO5"
+            android:layout_width="134dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:gravity="end"
+            android:text="X.YY€"
+            android:textColor="#3CB043"
+            android:textSize="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO5" />
+
+        <Button
+            android:id="@+id/buttonTuoteKO1"
+            android:layout_width="368dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text=""
+            app:backgroundTint="#00FFFFFF"
+            app:elevation="0dp"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSearch2" />
+
+        <Button
+            android:id="@+id/buttonTuoteKO2"
+            android:layout_width="368dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text=""
+            app:backgroundTint="#00FFFFFF"
+            app:elevation="0dp"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonTuoteKO1" />
+
+        <Button
+            android:id="@+id/buttonTuoteKO3"
+            android:layout_width="368dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text=""
+            app:backgroundTint="#00FFFFFF"
+            app:elevation="0dp"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonTuoteKO2" />
+
+        <Button
+            android:id="@+id/buttonTuoteKO4"
+            android:layout_width="368dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text=""
+            app:backgroundTint="#00FFFFFF"
+            app:elevation="0dp"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonTuoteKO3" />
+
+        <Button
+            android:id="@+id/buttonTuoteKO5"
+            android:layout_width="368dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text=""
+            app:backgroundTint="#00FFFFFF"
+            app:elevation="0dp"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonTuoteKO4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
