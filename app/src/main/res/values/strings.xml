@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KomponenttiKirjasto</string>
+    <string name="komponenttikirjasto">KomponenttiKirjasto</string>
+    <string name="hae">Hae</string>
 </resources>
