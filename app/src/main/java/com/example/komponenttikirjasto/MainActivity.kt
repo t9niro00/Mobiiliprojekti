@@ -8,24 +8,25 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.komponentit_selaus.*
 import java.lang.StringBuilder
 
 //Setting the data
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.komponentit_selaus)
 
         var database = FirebaseDatabase.getInstance().reference
 
-        var prodnum = 2
-        var prodname = "Tuote"
-        var prodprice = 6969
+        var name = "Products"
+        var prodnum = 3
+        var prodname = "Kompo"
+        var prodprice = 7
 
 
 
-        database.child(prodnum.toString()).setValue(RealtimeDatabase(prodname,prodprice,prodnum))
+        database.child(name).setValue(RealtimeDatabase(prodname,prodprice,prodnum))
         database.addValueEventListener(getData)
         database.addListenerForSingleValueEvent(getData)
     }
@@ -40,11 +41,10 @@ class MainActivity : AppCompatActivity() {
         override fun onDataChange(p0: DataSnapshot) {
             var sb = StringBuilder()
             for ( i in p0.children){
-                var prodname1 = i.child("prodname").getValue()
-                var prodprice1 = i.child("prodprice").getValue()
-                sb.append("${i.key} $prodname1 $prodprice1" )
+                var prodname1 = i.child("prodnum").getValue()
+                sb.append("$prodname1")
             }
-            editTextSearch.setText(sb)
+            textViewTuotenimiKO1.setText(sb)
 
         }
 
