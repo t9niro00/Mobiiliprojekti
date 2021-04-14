@@ -41,8 +41,10 @@ class MainActivity : AppCompatActivity() {
         override fun onDataChange(p0: DataSnapshot) {
             var sb = StringBuilder()
             for ( i in p0.children){
-                var prodname1 = i.child("prodnum").getValue()
-                sb.append("$prodname1")
+                var prodname1 = i.child("prodname").getValue()
+                var prodnum1 = i.child("prodnum").getValue()
+
+                sb.append("$prodname1,$prodnum1")
             }
             textViewTuotenimiKO1.setText(sb)
 
