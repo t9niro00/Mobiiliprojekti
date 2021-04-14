@@ -11,7 +11,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.komponentit_selaus.*
 import java.lang.StringBuilder
 
-//Setting the data
+// Asetetaan data
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         database.addListenerForSingleValueEvent(getData)
     }
 
-    // Getting the data
+    // Haetaan data
 
     var getData = object : ValueEventListener{
         override fun onCancelled(p0: DatabaseError) {

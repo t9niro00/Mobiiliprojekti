@@ -1,5 +1,7 @@
 package com.example.elecstore
 
+// Määritellään muuttujat, joita käytetään databasessa
+
 class RealtimeDatabase {
     var prodname = ""
     var prodprice = 0
