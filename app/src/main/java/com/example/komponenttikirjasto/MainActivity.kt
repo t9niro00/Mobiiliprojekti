@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.elecstore.RealtimeDatabase
 import com.example.elecstore.getData
+import com.example.elecstore.getKompoData
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -48,6 +49,10 @@ class MainActivity : AppCompatActivity() {
 
         buttonMikropiirit.setOnClickListener{
             startActivity(Intent(applicationContext,getData::class.java))
+        }
+
+        buttonKomponentit.setOnClickListener {
+            startActivity(Intent(applicationContext, getKompoData::class.java))
         }
 
     }
