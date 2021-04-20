@@ -13,7 +13,6 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.ostoskori.*
 
 class getData : AppCompatActivity() {
-
     //Määritellään databasen referenssi täälläkin
 
     var database = FirebaseDatabase.getInstance().getReference("Products")
@@ -24,8 +23,7 @@ class getData : AppCompatActivity() {
         getData()
 
         buttonTuoteKO1.setOnClickListener{
-            startActivity(Intent(applicationContext,tuoteGet::class.java))
-
+            startActivity(Intent(applicationContext,tuoteGet2::class.java))
         }
 
         val actionBar = supportActionBar
@@ -34,13 +32,12 @@ class getData : AppCompatActivity() {
 
         actionBar.setDisplayHomeAsUpEnabled(true)
     }
+    //Luodaan funktio, joka hakee dataa.
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
-
-
-    //Luodaan funktio, joka hakee dataa.
 
     private fun getData(){
         //Määritellään muuttujat

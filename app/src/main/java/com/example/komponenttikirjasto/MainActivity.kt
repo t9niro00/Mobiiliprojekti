@@ -35,15 +35,6 @@ class MainActivity : AppCompatActivity() {
         //Asetetaan listeneri mikropiirien valintapainikkeeseen,
         //jota painaessa suoritetaan getData-luokan sisällä oleva koodi
 
-        /* TODO: buttonMikropiirit.setOnClickListener{
-            startActivity(Intent(applicationContext,getData::class.java))
-        }
-
-       TODO: buttonKomponentit.setOnClickListener {
-            startActivity(Intent(applicationContext, getKompoData::class.java))
-        } */
-
-
         buttonMikropiirit.setOnClickListener {
             startActivity(Intent(applicationContext,getData::class.java))
         }
@@ -58,7 +49,6 @@ class MainActivity : AppCompatActivity() {
 
         checkTheme()
     }
-// nappulat joilla siirtyä toisiin aktiviteetteihin
 
     private fun checkTheme() {
         when (MyPreferences(this).darkMode) {

@@ -24,8 +24,8 @@ class getKompoData : AppCompatActivity(){
 
         buttonTuoteKO1.setOnClickListener{
             startActivity(Intent(applicationContext,tuoteGet::class.java))
-
         }
+
         val actionBar = supportActionBar
 
         actionBar!!.title = "Komponentit"
