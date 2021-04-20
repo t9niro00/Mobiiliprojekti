@@ -27,6 +27,16 @@ class getData : AppCompatActivity() {
             startActivity(Intent(applicationContext,tuoteGet::class.java))
 
         }
+
+        val actionBar = supportActionBar
+
+        actionBar!!.title = "Mikrokontrollerit"
+
+        actionBar.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
 

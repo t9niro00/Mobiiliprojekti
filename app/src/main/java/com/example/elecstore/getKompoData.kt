@@ -26,8 +26,18 @@ class getKompoData : AppCompatActivity(){
             startActivity(Intent(applicationContext,tuoteGet::class.java))
 
         }
+        val actionBar = supportActionBar
+
+        actionBar!!.title = "Komponentit"
+
+        actionBar.setDisplayHomeAsUpEnabled(true)
     }
     //Luodaan funktio, joka hakee dataa.
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 
     private fun getData(){
         //Määritellään muuttujat

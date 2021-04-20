@@ -19,6 +19,17 @@ class tuoteGet : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tuotesivu)
         getTuote()
+
+        val actionBar = supportActionBar
+
+        actionBar!!.title = "Tuote info"
+
+        actionBar.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun getTuote(){
