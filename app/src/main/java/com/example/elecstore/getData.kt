@@ -43,8 +43,6 @@ class getData : AppCompatActivity() {
         //Määritellään muuttujat
 
         lateinit var prodname1: TextView
-        lateinit var prodname2: TextView
-        lateinit var prodprice2: TextView
         lateinit var prodprice1: TextView
 
         //Annetaan määritellyille muuttujille slotit, joihin liittää databasesta saatu tieto

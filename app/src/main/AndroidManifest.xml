@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KomponenttiKirjasto">
-        <activity android:name=".settings"></activity>
+        <activity android:name="com.example.elecstore.tuoteGet2"></activity>
+        <activity android:name=".settings" />
         <activity
             android:name=".komponentit_selaus"
             android:parentActivityName=".MainActivity" />
@@ -23,10 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.elecstore.getData"/>
-        <activity android:name="com.example.elecstore.tuoteGet"/>
-        <activity android:name="com.example.elecstore.getKompoData"/>
-
+        <activity android:name="com.example.elecstore.getData" />
+        <activity android:name="com.example.elecstore.tuoteGet" />
+        <activity android:name="com.example.elecstore.getKompoData" />
     </application>
 
 </manifest>
