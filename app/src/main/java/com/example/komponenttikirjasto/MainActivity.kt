@@ -2,14 +2,12 @@ package com.example.komponenttikirjasto
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.komponenttikirjasto.R.id.buttonMikropiirit
-import com.example.komponenttikirjasto.R.id.buttonKomponentit
-import com.example.komponenttikirjasto.R.id.textViewTitle
+import androidx.preference.PreferenceManager
+import com.example.komponenttikirjasto.R.id.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
