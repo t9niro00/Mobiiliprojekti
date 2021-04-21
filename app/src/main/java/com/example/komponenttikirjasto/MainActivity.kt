@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
 
         //Asetetaan databaseen halutut arvot koodissa.
 
-        database.child(name1).setValue(RealtimeDatabase("OMEGA", 1, 2))
-        database.child(name2).setValue(RealtimeDatabase("LUL", 3, 4))
+        database.child(name1).setValue(RealtimeDatabase("Komponentti", 1, 2))
+        database.child(name2).setValue(RealtimeDatabase("Mikrokontrolleri", 3, 4))
 
         //Asetetaan listeneri mikropiirien valintapainikkeeseen,
         //jota painaessa suoritetaan getData-luokan sisällä oleva koodi

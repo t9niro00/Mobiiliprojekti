@@ -26,6 +26,8 @@ class tuoteGet : AppCompatActivity() {
 
         lateinit var prodname1: TextView
         lateinit var prodprice1: TextView
+        lateinit var prodname2: TextView
+        lateinit var prodprice2: TextView
 
         //Annetaan määritellyille muuttujille slotit, joihin liittää databasesta saatu tieto
 
@@ -44,9 +46,15 @@ class tuoteGet : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onDataChange(p0: DataSnapshot) {
-                val realtimeDatabase = p0.child("Komponentit").getValue(RealtimeDatabase::class.java)
+                val realtimeDatabase = p0.child("Mikrokontrollerit").getValue(RealtimeDatabase::class.java)
                 prodname1.text = realtimeDatabase?.prodname
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
+
+
+                val healtimeDatabase = p0.child("Mikrokontrollerit").getValue(RealtimeDatabase::class.java)
+                prodname2.text = realtimeDatabase?.prodname
+                prodprice2.text = realtimeDatabase?.prodprice.toString() + "€"
+
 
 
             }
