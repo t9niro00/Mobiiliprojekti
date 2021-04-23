@@ -4,11 +4,13 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import com.example.elecstore.RealtimeDatabase
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.ostoskori.*
 
 //Ostoskorissa tulee näkyä valittu tuote, esim. LUL kohdassa textViewtuotenimi, hinta kohdassa TextViewtuotehinta
 //ja tuotteiden yhteishinta kohdassa textView5. Osta- painikkeesta tulee toasti, että tuote ostettu.
@@ -21,6 +23,9 @@ class ostoskori : AppCompatActivity() {
         setContentView(R.layout.ostoskori)
         addBasket()
 
+        button.setOnClickListener {
+            Toast.makeText(applicationContext,"Tuote ostettu", Toast.LENGTH_LONG).show()
+        }
     }
 
     fun addBasket(){
