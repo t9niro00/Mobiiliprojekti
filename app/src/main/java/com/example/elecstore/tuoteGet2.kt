@@ -9,6 +9,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import org.w3c.dom.Text
 
 class tuoteGet2 : AppCompatActivity() {
     //Määritellään databasereferenssi
@@ -37,11 +38,13 @@ class tuoteGet2 : AppCompatActivity() {
 
         lateinit var prodname1: TextView
         lateinit var prodprice1: TextView
+        lateinit var prodval1: TextView
 
         //Annetaan määritellyille muuttujille slotit, joihin liittää databasesta saatu tieto
 
         prodname1 = findViewById(R.id.textViewTuotenimi)
         prodprice1 = findViewById(R.id.textViewHinta)
+        prodval1 = findViewById(R.id.textViewSaatavuus)
 
 
 
@@ -58,7 +61,7 @@ class tuoteGet2 : AppCompatActivity() {
                 val realtimeDatabase = p0.child("Mikrokontrollerit").getValue(RealtimeDatabase::class.java)
                 prodname1.text = realtimeDatabase?.prodname
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
-
+                prodval1.text = realtimeDatabase?.prodval.toString() + " kpl"
 
             }
 
