@@ -1,10 +1,13 @@
 package com.example.elecstore
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.komponenttikirjasto.R
+import com.example.komponenttikirjasto.ostoskori
+import com.example.komponenttikirjasto.ostoskori2
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -30,7 +33,7 @@ class tuoteGet2 : AppCompatActivity() {
         actionBar.setDisplayHomeAsUpEnabled(true)
 
         buttonLisaaOstoskoriin.setOnClickListener {
-            setContentView(R.layout.ostoskori)
+            startActivity(Intent(applicationContext, ostoskori2::class.java))
         }
     }
 
