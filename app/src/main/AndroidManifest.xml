@@ -28,6 +28,7 @@
         <activity android:name="com.example.elecstore.getData" />
         <activity android:name="com.example.elecstore.tuoteGet" />
         <activity android:name="com.example.elecstore.getKompoData" />
+        <activity android:name=".ostoskori"/>
     </application>
 
 </manifest>

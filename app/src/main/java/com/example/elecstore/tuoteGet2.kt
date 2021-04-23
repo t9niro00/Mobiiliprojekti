@@ -9,6 +9,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.tuotesivu.*
 import org.w3c.dom.Text
 
 class tuoteGet2 : AppCompatActivity() {
@@ -21,11 +22,16 @@ class tuoteGet2 : AppCompatActivity() {
         setContentView(R.layout.tuotesivu)
         getTuote()
 
+
         val actionBar = supportActionBar
 
         actionBar!!.title = "Tuote info"
 
         actionBar.setDisplayHomeAsUpEnabled(true)
+
+        buttonLisaaOstoskoriin.setOnClickListener {
+            setContentView(R.layout.ostoskori)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -67,4 +73,5 @@ class tuoteGet2 : AppCompatActivity() {
 
         })
     }
+
 }

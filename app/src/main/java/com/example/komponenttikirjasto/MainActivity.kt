@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         //jota painaessa suoritetaan getData-luokan sisällä oleva koodi
 
         buttonMikropiirit.setOnClickListener {
-            startActivity(Intent(applicationContext,getData::class.java))
+            startActivity(Intent(applicationContext, getData::class.java))
         }
 
         buttonKomponentit.setOnClickListener {
