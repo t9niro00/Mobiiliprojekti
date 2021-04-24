@@ -42,13 +42,14 @@ class getKompoData : AppCompatActivity(){
     private fun getData(){
         //Määritellään muuttujat
 
-        lateinit var prodname1: TextView
-        lateinit var prodprice1: TextView
-
         //Annetaan määritellyille muuttujille slotit, joihin liittää databasesta saatu tieto
 
-        prodname1 = findViewById(R.id.textViewTuotenimiKO1)
-        prodprice1 = findViewById(R.id.textViewHintaKO1)
+        val prodname1: TextView = findViewById(R.id.textViewTuotenimiKO1)
+        val prodprice1: TextView = findViewById(R.id.textViewHintaKO1)
+        val prodname2: TextView = findViewById(R.id.textViewTuotenimiKO2)
+        val prodprice2: TextView = findViewById(R.id.textViewHintaKO2)
+        val prodname3: TextView = findViewById(R.id.textViewTuotenimiKO3)
+        val prodprice3: TextView = findViewById(R.id.textViewHintaKO3)
 
 
 
@@ -63,10 +64,15 @@ class getKompoData : AppCompatActivity(){
 
             @SuppressLint("SetTextI18n")
             override fun onDataChange(p0: DataSnapshot) {
-                val realtimeDatabase = p0.child("Komponentit").child("Tuotteet").getValue(RealtimeDatabase::class.java)
+                val realtimeDatabase = p0.child("Komponentit").child("0").getValue(RealtimeDatabase::class.java)
+                val realtimeDatabase2 = p0.child("Komponentit").child("1").getValue(RealtimeDatabase::class.java)
+                val realtimeDatabase3 = p0.child("Komponentit").child("2").getValue(RealtimeDatabase::class.java)
                 prodname1.text = realtimeDatabase?.prodname
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
-
+                prodname2.text = realtimeDatabase2?.prodname
+                prodprice2.text = realtimeDatabase2?.prodprice.toString() + "€"
+                prodname3.text = realtimeDatabase3?.prodname
+                prodprice3.text = realtimeDatabase3?.prodprice.toString() + "€"
             }
 
         })

@@ -42,16 +42,11 @@ class tuoteGet : AppCompatActivity() {
     private fun getTuote(){
         //Määritellään muuttujat
 
-        lateinit var prodname1: TextView
-        lateinit var prodprice1: TextView
-        lateinit var prodval1: TextView
-
         //Annetaan määritellyille muuttujille slotit, joihin liittää databasesta saatu tieto
 
-        prodname1 = findViewById(R.id.textViewTuotenimi)
-        prodprice1 = findViewById(R.id.textViewHinta)
-        prodval1 = findViewById(R.id.textViewSaatavuus)
-
+        var prodname1: TextView = findViewById(R.id.textViewTuotenimi)
+        var prodprice1: TextView = findViewById(R.id.textViewHinta)
+        var prodval1: TextView = findViewById(R.id.textViewSaatavuus)
 
 
         database.addValueEventListener(object : ValueEventListener {
