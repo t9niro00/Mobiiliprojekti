@@ -10,12 +10,15 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.komponentit_selaus.*
 import kotlinx.android.synthetic.main.ostoskori.*
+import kotlinx.android.synthetic.main.ostoskori.buttonTuoteKO1
 
 class getKompoData : AppCompatActivity(){
     //Määritellään databasen referenssi täälläkin
 
-    var database = FirebaseDatabase.getInstance().getReference("Products")
+    var database = FirebaseDatabase.getInstance().getReference("Historia")
+    var database2 = FirebaseDatabase.getInstance().getReference("Komponentit")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +26,29 @@ class getKompoData : AppCompatActivity(){
         getData()
 
         buttonTuoteKO1.setOnClickListener{
+            database.child("0").child("Komponenttihistoria").setValue("0")
             startActivity(Intent(applicationContext,tuoteGet::class.java))
         }
+
+        buttonTuoteKO2.setOnClickListener {
+            database.child("0").child("Komponenttihistoria").setValue("1")
+            startActivity(Intent(applicationContext,tuoteGet::class.java))
+        }
+
+        buttonTuoteKO3.setOnClickListener {
+            database.child("0").child("Komponenttihistoria").setValue("2")
+            startActivity(Intent(applicationContext,tuoteGet::class.java))
+        }
+
+        buttonTuoteKO4.setOnClickListener {
+            database.child("0").child("Komponenttihistoria").setValue("1")
+            startActivity(Intent(applicationContext,tuoteGet::class.java))
+        }
+        buttonTuoteKO5.setOnClickListener {
+            database.child("0").child("Komponenttihistoria").setValue("1")
+            startActivity(Intent(applicationContext,tuoteGet::class.java))
+        }
+
 
         val actionBar = supportActionBar
 
@@ -54,7 +78,7 @@ class getKompoData : AppCompatActivity(){
 
 
 
-        database.addValueEventListener(object : ValueEventListener {
+        database2.addValueEventListener(object : ValueEventListener {
             @SuppressLint("ShowToast")
             override fun onCancelled(p0: DatabaseError) {
                 //Toast.makeText(this@MainActivity, p0.code, Toast.LENGTH_SHORT)
@@ -64,9 +88,9 @@ class getKompoData : AppCompatActivity(){
 
             @SuppressLint("SetTextI18n")
             override fun onDataChange(p0: DataSnapshot) {
-                val realtimeDatabase = p0.child("Komponentit").child("0").getValue(RealtimeDatabase::class.java)
-                val realtimeDatabase2 = p0.child("Komponentit").child("1").getValue(RealtimeDatabase::class.java)
-                val realtimeDatabase3 = p0.child("Komponentit").child("2").getValue(RealtimeDatabase::class.java)
+                val realtimeDatabase = p0.child("0").getValue(RealtimeDatabase::class.java)
+                val realtimeDatabase2 = p0.child("1").getValue(RealtimeDatabase::class.java)
+                val realtimeDatabase3 = p0.child("2").getValue(RealtimeDatabase::class.java)
                 prodname1.text = realtimeDatabase?.prodname
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
                 prodname2.text = realtimeDatabase2?.prodname
