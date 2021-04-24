@@ -32,10 +32,16 @@ class ostoskori2 : AppCompatActivity() {
         lateinit var prodprice1: TextView
 
 
+
+
+
         //Annetaan määritellyille muuttujille slotit, joihin liittää databasesta saatu tieto
 
         prodname1 = findViewById(R.id.textViewTuotenimiKO1)
         prodprice1 = findViewById(R.id.textViewHintaKO1)
+
+
+
 
 
         database.addValueEventListener(object : ValueEventListener {
@@ -48,7 +54,7 @@ class ostoskori2 : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onDataChange(p0: DataSnapshot) {
-                val realtimeDatabase = p0.child("Mikrokontrollerit").getValue(RealtimeDatabase::class.java)
+                val realtimeDatabase = p0.child("Mikrokontrollerit").child("Tuotteet").getValue(RealtimeDatabase::class.java)
                 prodname1.text = realtimeDatabase?.prodname
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
 

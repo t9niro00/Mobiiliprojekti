@@ -19,11 +19,11 @@ class RealtimeDatabase {
 
     var prodnum = 0
     var prodname = ""
-    var prodprice = 0
+    var prodprice = 0.0
     var prodval = 0
 
     constructor()
-    constructor(prodname: String, prodprice: Int, prodnum: Int, prodval: Int)
+    constructor(prodname: String, prodprice: Double, prodnum: Int, prodval: Int)
     {
         this.prodnum = prodnum
         this.prodprice = prodprice
