@@ -60,6 +60,7 @@ class tuoteGet : AppCompatActivity() {
 
         query.addOnCompleteListener(OnCompleteListener { task ->
             jokumuuttuja = task.getResult()?.value.toString()
+            Log.v("jokumuuttuja: Val: ", jokumuuttuja)
         })
 
 
@@ -74,7 +75,7 @@ class tuoteGet : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onDataChange(p0: DataSnapshot) {
-                while (jokumuuttuja.length == 0) {
+                while (jokumuuttuja.isEmpty()) {
                     Toast.makeText(applicationContext, "Kalle on lyhyt", Toast.LENGTH_LONG)
                 }
                 val realtimeDatabase = p0.child(jokumuuttuja).getValue(RealtimeDatabase::class.java)
@@ -82,7 +83,7 @@ class tuoteGet : AppCompatActivity() {
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
                 prodval1.text = realtimeDatabase?.prodval.toString() + " kpl"
                 Log.v("Kalle on hanavesigoblin", realtimeDatabase.toString())
-
+                Log.v("jokumuuttuja: Val: ", jokumuuttuja)
             }
 
         })

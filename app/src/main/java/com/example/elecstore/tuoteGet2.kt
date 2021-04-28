@@ -75,7 +75,7 @@ class tuoteGet2 : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onDataChange(p0: DataSnapshot) {
-                while (jokumuuttuja.length == 0) {
+                while (jokumuuttuja.isEmpty()) {
                     Toast.makeText(applicationContext, "Kalle on lyhyt", Toast.LENGTH_LONG)
                 }
                 val realtimeDatabase = p0.child(jokumuuttuja).getValue(RealtimeDatabase::class.java)
