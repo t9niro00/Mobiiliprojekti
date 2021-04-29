@@ -36,15 +36,26 @@ class ostoskori : AppCompatActivity() {
         val prodname1: TextView = findViewById(R.id.textViewTuotenimiKO1)
         val prodprice1: TextView = findViewById(R.id.textViewHintaKO1)
 
+        Log.v("Höhöö", "jokumuuttuja")
+
         val query = database2.child("0").child("Komponenttihistoria").get()
 
         var jokumuuttuja = ""
 
+        Log.v("Höhöö", jokumuuttuja)
+
         query.addOnCompleteListener(OnCompleteListener { task ->
-            jokumuuttuja = task.getResult()?.value.toString()
+            if (task.isSuccessful){
+                Log.v("Höhöö", "perspillu")
+                jokumuuttuja = task.getResult()?.value.toString()
+                Log.v("jokumuuttuja: Val: ", jokumuuttuja)
+            }
+            else{
+                Log.v("höhöö", "Timantit on ikuisia")
+            }
         })
 
-
+        Thread.sleep(250)
 
         database.addValueEventListener(object : ValueEventListener {
             @SuppressLint("ShowToast")

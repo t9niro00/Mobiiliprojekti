@@ -23,6 +23,8 @@ class ostoskori2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ostoskori)
+        Log.v("Höhöö", "jokumuuttuja")
+
         addBasket()
 
         button.setOnClickListener {
@@ -33,26 +35,39 @@ class ostoskori2 : AppCompatActivity() {
     fun addBasket(){
 
 
+        Log.v("Höhöö", "1")
+
         val prodname1: TextView = findViewById(R.id.textViewTuotenimiKO1)
+        Log.v("Höhöö", "2")
         val prodprice1: TextView = findViewById(R.id.textViewHintaKO1)
-
-        val query = database2.child("1").child("Mikrokontrollerihistoria").get()
-
         var jokumuuttuja = ""
+        Log.v("Höhöö", "3")
+        val query = database2.child("1").child("Mikrokontrollerihistoria").get()
+        Log.v("Höhöö", "4")
 
+
+        Log.v("Höhöö", "5")
+
+        Thread.sleep(250)
 
 
         query.addOnCompleteListener(OnCompleteListener { task ->
+            if (task.isSuccessful){
+            Log.v("Höhöö", "perspillu")
             jokumuuttuja = task.getResult()?.value.toString()
             Log.v("jokumuuttuja: Val: ", jokumuuttuja)
+        }
+        else{
+            Log.v("höhöö", "Timantit on ikuisia")
+        }
         })
 
-
+        Log.v("Höhöö", "6")
 
         database.addValueEventListener(object : ValueEventListener {
             @SuppressLint("ShowToast")
             override fun onCancelled(p0: DatabaseError) {
-                Log.v("Errori tuli.", "Errori")
+                //Log.v("Errori tuli.", "Errori")
             }
 
             //Määritellään mistä puusta haetaan data
