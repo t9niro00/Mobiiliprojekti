@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.ostoskori.*
+import java.lang.Integer.sum
 
 //Ostoskorissa tulee näkyä valittu tuote, esim. LUL kohdassa textViewtuotenimi, hinta kohdassa TextViewtuotehinta
 //ja tuotteiden yhteishinta kohdassa textView5. Osta- painikkeesta tulee toasti, että tuote ostettu.
@@ -35,6 +36,13 @@ class ostoskori : AppCompatActivity() {
 
         val prodname1: TextView = findViewById(R.id.textViewTuotenimiKO1)
         val prodprice1: TextView = findViewById(R.id.textViewHintaKO1)
+        val rentprod1: TextView = findViewById(R.id.textViewTuotenimiMC1)
+        val rentprice1: TextView = findViewById(R.id.textViewHintaMC1)
+
+        rentprod1.text = "Vuokratuote"
+        rentprice1.text = 10.0.toString() + "€"
+
+
 
         Log.v("Höhöö", "jokumuuttuja")
 

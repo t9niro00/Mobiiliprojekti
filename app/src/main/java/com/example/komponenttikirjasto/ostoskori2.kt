@@ -35,8 +35,8 @@ class ostoskori2 : AppCompatActivity() {
     fun addBasket(){
 
 
-        Log.v("Höhöö", "1")
 
+        Log.v("Höhöö", "1")
         val prodname1: TextView = findViewById(R.id.textViewTuotenimiKO1)
         Log.v("Höhöö", "2")
         val prodprice1: TextView = findViewById(R.id.textViewHintaKO1)
@@ -44,6 +44,13 @@ class ostoskori2 : AppCompatActivity() {
         Log.v("Höhöö", "3")
         val query = database2.child("1").child("Mikrokontrollerihistoria").get()
         Log.v("Höhöö", "4")
+        val sum: TextView = findViewById(R.id.textView5)
+
+        val rentprod1: TextView = findViewById(R.id.textViewTuotenimiMC1)
+        val rentprice1: TextView = findViewById(R.id.textViewHintaMC1)
+
+        rentprod1.text = "Vuokratuote"
+        rentprice1.text = 10.0.toString() + "€"
 
 
         Log.v("Höhöö", "5")
