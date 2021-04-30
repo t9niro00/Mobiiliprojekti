@@ -3,11 +3,12 @@ package com.example.elecstore
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.renderscript.Sampler
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.komponenttikirjasto.R
 import com.example.komponenttikirjasto.ostoskori
 import com.google.android.gms.tasks.OnCompleteListener
@@ -15,7 +16,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.tuotesivu.*
 
 class tuoteGet : AppCompatActivity() {
@@ -31,12 +33,14 @@ class tuoteGet : AppCompatActivity() {
 
         val actionBar = supportActionBar
 
+        val storageRef = Firebase.storage.reference
+
         actionBar!!.title = "Tuote info"
 
         actionBar.setDisplayHomeAsUpEnabled(true)
 
         buttonLisaaOstoskoriin.setOnClickListener {
-            startActivity(Intent(applicationContext,ostoskori::class.java))
+            startActivity(Intent(applicationContext, ostoskori::class.java))
         }
     }
 
@@ -53,6 +57,7 @@ class tuoteGet : AppCompatActivity() {
         val prodname1: TextView = findViewById(R.id.textViewTuotenimi)
         val prodprice1: TextView = findViewById(R.id.textViewHinta)
         val prodval1: TextView = findViewById(R.id.textViewSaatavuus)
+        //val prodimg: ImageView = findViewById(R.id.imageViewTuotekuva)
 
         val query = database2.child("0").child("Komponenttihistoria").get()
 
@@ -82,6 +87,77 @@ class tuoteGet : AppCompatActivity() {
                 prodname1.text = realtimeDatabase?.prodname
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
                 prodval1.text = realtimeDatabase?.prodval.toString() + " kpl"
+
+
+
+                if(jokumuuttuja <= "0") {
+                    val prodimg1 = Firebase.storage.reference.child("Images/leds.jpg")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuva54)
+
+
+                        Glide.with(this@tuoteGet)
+                            .load(imageUrl)
+                            .into(imageView)
+
+                    }
+                }
+                if(jokumuuttuja == "1") {
+                    val prodimg1 = Firebase.storage.reference.child("Images/wires.png")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuva54)
+
+
+                        Glide.with(this@tuoteGet)
+                            .load(imageUrl)
+                            .into(imageView)
+
+                    }
+
+                }
+                if(jokumuuttuja == "2")
+                {
+                    val prodimg1 = Firebase.storage.reference.child("Images/resistor.png")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuva54)
+
+                        Glide.with(this@tuoteGet)
+                            .load(imageUrl)
+                            .into(imageView)
+                    }
+
+                }
+                if(jokumuuttuja == "3") {
+                    val prodimg1 = Firebase.storage.reference.child("Images/capacitor.png")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuva54)
+
+                        Glide.with(this@tuoteGet)
+                                .load(imageUrl)
+                                .into(imageView)
+                    }
+                }
+                    if(jokumuuttuja == "4") {
+                        val prodimg1 = Firebase.storage.reference.child("Images/switches.webp")
+
+                        prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                            val imageUrl = Uri.toString()
+                            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuva54)
+
+                            Glide.with(this@tuoteGet)
+                                    .load(imageUrl)
+                                    .into(imageView)
+                        }
+                    }
+
                 Log.v("Kalle on hanavesigoblin", realtimeDatabase.toString())
                 Log.v("jokumuuttuja: Val: ", jokumuuttuja)
             }

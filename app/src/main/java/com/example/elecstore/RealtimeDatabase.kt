@@ -1,18 +1,5 @@
 package com.example.elecstore
 
-import android.annotation.SuppressLint
-import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.example.komponenttikirjasto.R
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_main.*
-
 // Määritellään muuttujat, joita käytetään databasessa
 
 class RealtimeDatabase {
@@ -21,6 +8,7 @@ class RealtimeDatabase {
     var prodname = ""
     var prodprice = 0.0
     var prodval = 0
+    var prodimg = ""
 
     constructor()
     constructor(prodname: String, prodprice: Double, prodnum: Int, prodval: Int)
@@ -29,6 +17,7 @@ class RealtimeDatabase {
         this.prodprice = prodprice
         this.prodname = prodname
         this.prodval = prodval
+        this.prodimg = prodimg
 
     }
 

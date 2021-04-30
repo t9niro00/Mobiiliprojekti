@@ -3,16 +3,20 @@ package com.example.elecstore
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.komponenttikirjasto.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.komponentit_selaus.*
-import kotlinx.android.synthetic.main.ostoskori.*
 import kotlinx.android.synthetic.main.ostoskori.buttonTuoteKO1
+
 
 class getData : AppCompatActivity() {
     //Määritellään databasen referenssi täälläkin
@@ -27,26 +31,26 @@ class getData : AppCompatActivity() {
 
         buttonTuoteKO1.setOnClickListener{
             database2.child("1").child("Mikrokontrollerihistoria").setValue("0")
-            startActivity(Intent(applicationContext,tuoteGet2::class.java))
+            startActivity(Intent(applicationContext, tuoteGet2::class.java))
         }
 
         buttonTuoteKO2.setOnClickListener {
             database2.child("1").child("Mikrokontrollerihistoria").setValue("1")
-            startActivity(Intent(applicationContext,tuoteGet2::class.java))
+            startActivity(Intent(applicationContext, tuoteGet2::class.java))
         }
 
         buttonTuoteKO3.setOnClickListener {
             database2.child("1").child("Mikrokontrollerihistoria").setValue("2")
-            startActivity(Intent(applicationContext,tuoteGet2::class.java))
+            startActivity(Intent(applicationContext, tuoteGet2::class.java))
         }
 
         buttonTuoteKO4.setOnClickListener {
             database2.child("1").child("Mikrokontrollerihistoria").setValue("1")
-            startActivity(Intent(applicationContext,tuoteGet2::class.java))
+            startActivity(Intent(applicationContext, tuoteGet2::class.java))
         }
         buttonTuoteKO5.setOnClickListener {
             database2.child("1").child("Mikrokontrollerihistoria").setValue("1")
-            startActivity(Intent(applicationContext,tuoteGet2::class.java))
+            startActivity(Intent(applicationContext, tuoteGet2::class.java))
         }
 
         val actionBar = supportActionBar
@@ -67,36 +71,80 @@ class getData : AppCompatActivity() {
 
         val prodname1: TextView = findViewById(R.id.textViewTuotenimiKO1)
         val prodprice1: TextView = findViewById(R.id.textViewHintaKO1)
+      //  val prodimg1: ImageView = findViewById(R.id.imageViewTuotekuvaKO1)
         val prodname2: TextView = findViewById(R.id.textViewTuotenimiKO2)
         val prodprice2: TextView = findViewById(R.id.textViewHintaKO2)
+        //val prodimg2 : ImageView = findViewById(R.id.imageViewTuotekuvaKO2)
         val prodname3: TextView = findViewById(R.id.textViewTuotenimiKO3)
         val prodprice3: TextView = findViewById(R.id.textViewHintaKO3)
+        //val prodimg3: ImageView = findViewById(R.id.imageViewTuotekuvaKO3)
 
         //Annetaan määritellyille muuttujille slotit, joihin liittää databasesta saatu tieto
 
 
 
+        val storageRef = Firebase.storage.reference
 
-        database.addValueEventListener(object : ValueEventListener {
-            @SuppressLint("ShowToast")
-            override fun onCancelled(p0: DatabaseError) {
-                //Toast.makeText(this@MainActivity, p0.code, Toast.LENGTH_SHORT)
-            }
+        //Luodaan referenssi
+        val raspberryRef = Firebase.storage.reference.child("Images/pi4.png")
+        val arduinoRef = Firebase.storage.reference.child("Images/arduino.webp")
+        val edisonRef = Firebase.storage.reference.child("Images/edison.png")
 
-            //Määritellään mistä puusta haetaan data.
 
-            @SuppressLint("SetTextI18n")
-            override fun onDataChange(p0: DataSnapshot) {
-                val realtimeDatabase = p0.child("0").getValue(RealtimeDatabase::class.java)
-                val realtimeDatabase2 = p0.child("1").getValue(RealtimeDatabase::class.java)
-                val realtimeDatabase3 = p0.child("2").getValue(RealtimeDatabase::class.java)
-                prodname1.text = realtimeDatabase?.prodname
-                prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
-                prodname2.text = realtimeDatabase2?.prodname
-                prodprice2.text = realtimeDatabase2?.prodprice.toString() + "€"
-                prodname3.text = realtimeDatabase3?.prodname
-                prodprice3.text = realtimeDatabase3?.prodprice.toString() + "€"
-            }
+
+        //Haetaan kuva
+        raspberryRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageURL = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO1)
+
+            //Ladataan kuva imageviewiin
+            Glide.with(this)
+                    .load(imageURL)
+                    .into(imageView)
+
+        }
+
+        arduinoRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageUrl = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO2)
+
+            Glide.with(this)
+                    .load(imageUrl)
+                    .into(imageView)
+        }
+        edisonRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageUrl = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO3)
+
+            Glide.with(this)
+                    .load(imageUrl)
+                    .into(imageView)
+        }
+
+
+
+
+
+            database.addValueEventListener(object : ValueEventListener {
+                @SuppressLint("ShowToast")
+                override fun onCancelled(p0: DatabaseError) {
+                    //Toast.makeText(this@MainActivity, p0.code, Toast.LENGTH_SHORT)
+                }
+
+                //Määritellään mistä puusta haetaan data.
+
+                @SuppressLint("SetTextI18n")
+                override fun onDataChange(p0: DataSnapshot) {
+                    val realtimeDatabase = p0.child("0").getValue(RealtimeDatabase::class.java)
+                    val realtimeDatabase2 = p0.child("1").getValue(RealtimeDatabase::class.java)
+                    val realtimeDatabase3 = p0.child("2").getValue(RealtimeDatabase::class.java)
+                    prodname1.text = realtimeDatabase?.prodname
+                    prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
+                    prodname2.text = realtimeDatabase2?.prodname
+                    prodprice2.text = realtimeDatabase2?.prodprice.toString() + "€"
+                    prodname3.text = realtimeDatabase3?.prodname
+                    prodprice3.text = realtimeDatabase3?.prodprice.toString() + "€"
+                }
 
             })
 

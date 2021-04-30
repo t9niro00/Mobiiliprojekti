@@ -3,17 +3,20 @@ package com.example.komponenttikirjasto
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.elecstore.RealtimeDatabase
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.ostoskori.*
-import java.lang.Error
 
 class ostoskori2 : AppCompatActivity() {
 
@@ -89,6 +92,53 @@ class ostoskori2 : AppCompatActivity() {
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
                 Log.v("Kalle on hanavesigoblin", realtimeDatabase.toString())
                 Log.v("jokumuuttuja: Val: ", jokumuuttuja)
+
+
+                if(jokumuuttuja == "0") {
+                    val prodimg1 = Firebase.storage.reference.child("Images/pi4.png")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaMC1)
+
+
+                        Glide.with(this@ostoskori2)
+                                .load(imageUrl)
+                                .into(imageView)
+
+                    }
+                }
+                if(jokumuuttuja == "1") {
+                    val prodimg1 = Firebase.storage.reference.child("Images/arduino.webp")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaMC1)
+
+
+                        Glide.with(this@ostoskori2)
+                                .load(imageUrl)
+                                .into(imageView)
+
+                    }
+
+                }
+                if(jokumuuttuja == "2")
+                {
+                    val prodimg1 = Firebase.storage.reference.child("Images/edison.png")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaMC1)
+
+                        Glide.with(this@ostoskori2)
+                                .load(imageUrl)
+                                .into(imageView)
+                    }
+                }
+
+
+
             }
 
         })

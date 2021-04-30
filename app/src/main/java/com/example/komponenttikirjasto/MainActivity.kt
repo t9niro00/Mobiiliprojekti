@@ -4,12 +4,15 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager.getDefaultSharedPreferences
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.elecstore.RealtimeDatabase
+import com.bumptech.glide.Glide
 import com.example.elecstore.getData
 import com.example.elecstore.getKompoData
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_main.*
 
 // Asetetaan data
@@ -28,6 +31,34 @@ class MainActivity : AppCompatActivity() {
 
         var database = FirebaseDatabase.getInstance().getReference("Products")
 
+        val storageRef = Firebase.storage.reference
+
+        //Luodaan referenssi
+        val mcuRef = Firebase.storage.reference.child("Images/raspberrypi.png")
+        val compRef = Firebase.storage.reference.child("Images/komponentit.png")
+
+        //Haetaan kuva
+        mcuRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageURL = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.buttonMikropiirit)
+
+            //Ladataan kuva imageviewiin
+            Glide.with(this)
+                    .load(imageURL)
+                    .into(imageView)
+
+        }
+
+        compRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageUrl = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.buttonKomponentit)
+
+            Glide.with(this)
+                    .load(imageUrl)
+                    .into(imageView)
+
+
+        }
 
         //Asetetaan databaseen halutut arvot koodissa.
 

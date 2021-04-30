@@ -3,15 +3,18 @@ package com.example.elecstore
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.komponenttikirjasto.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.komponentit_selaus.*
-import kotlinx.android.synthetic.main.ostoskori.*
 import kotlinx.android.synthetic.main.ostoskori.buttonTuoteKO1
 
 class getKompoData : AppCompatActivity(){
@@ -74,6 +77,63 @@ class getKompoData : AppCompatActivity(){
         val prodprice2: TextView = findViewById(R.id.textViewHintaKO2)
         val prodname3: TextView = findViewById(R.id.textViewTuotenimiKO3)
         val prodprice3: TextView = findViewById(R.id.textViewHintaKO3)
+
+
+        val storageRef = Firebase.storage.reference
+
+        //Luodaan referenssi
+        val ledRef = Firebase.storage.reference.child("Images/leds.jpg")
+        val wireRef = Firebase.storage.reference.child("Images/wires.png")
+        val resistorRef = Firebase.storage.reference.child("Images/resistor.png")
+        val capacitorRef = Firebase.storage.reference.child("Images/capacitor.png")
+        val switchesRef = Firebase.storage.reference.child("Images/switches.webp")
+
+        //Haetaan kuva
+        ledRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageURL = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO1)
+
+            //Ladataan kuva imageviewiin
+            Glide.with(this)
+                .load(imageURL)
+                .into(imageView)
+
+        }
+
+        wireRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageUrl = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO2)
+
+            Glide.with(this)
+                .load(imageUrl)
+                .into(imageView)
+
+        }
+        resistorRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageUrl = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO3)
+
+            Glide.with(this)
+                .load(imageUrl)
+                .into(imageView)
+        }
+        capacitorRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageUrl = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO4)
+
+            Glide.with(this)
+                .load(imageUrl)
+                .into(imageView)
+        }
+
+        switchesRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageUrl = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO5)
+
+            Glide.with(this)
+                .load(imageUrl)
+                .into(imageView)
+        }
 
 
 
