@@ -1,0 +1,7 @@
+We had to add "TuoteGet & TuoteGet2 and Ostoskori & Ostoskori 2" for the code to work properly.
+numberless one gets it's data from "komponentit" library in our firebase database.
+number 2 gets its data from "mikrokontrollerit" library in our firebase database.
+otherwise these classes are identical, they just grab the data from a different library to get the
+data we want.
+
+TODO: Multiple products in shopping cart and price differences between products

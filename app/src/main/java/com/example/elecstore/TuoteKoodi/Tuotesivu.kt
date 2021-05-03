@@ -1,17 +1,11 @@
-package com.example.komponenttikirjasto
+package com.example.elecstore
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.elecstore.RealtimeDatabase
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.tuotesivu.*
+import com.example.komponenttikirjasto.MainActivity
+import com.example.komponenttikirjasto.R
+import kotlinx.android.synthetic.main.ostoskori.*
 
 class tuotesivu : AppCompatActivity() {
 
@@ -27,8 +21,6 @@ class tuotesivu : AppCompatActivity() {
         actionBar!!.title = "Tuotesivu"
 
         actionBar.setDisplayHomeAsUpEnabled(true)
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {

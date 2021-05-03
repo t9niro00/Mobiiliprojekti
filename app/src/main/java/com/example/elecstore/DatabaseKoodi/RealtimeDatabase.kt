@@ -1,4 +1,4 @@
-package com.example.elecstore
+package com.example.elecstore.DatabaseKoodi
 
 // Määritellään muuttujat, joita käytetään databasessa
 

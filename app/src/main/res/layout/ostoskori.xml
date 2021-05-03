@@ -14,19 +14,18 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="365dp"
+            android:layout_width="160dp"
             android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
             android:text="Ostoskori"
             android:textColor="@color/black"
-            android:textSize="30dp"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"  />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
@@ -35,7 +34,7 @@
             android:layout_marginTop="16dp"
             android:text="Vuokrattavat"
             android:textColor="@color/black"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -51,7 +50,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC1" />
 
@@ -64,7 +63,7 @@
             android:layout_marginTop="12dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC1"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -78,7 +77,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaMC1" />
 
         <TextView
             android:id="@+id/textViewHintaTextMC6"
@@ -89,7 +89,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC1"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC1" />
 
@@ -119,7 +119,7 @@
             android:layout_marginTop="18dp"
             android:text="Ostettavat"
             android:textColor="@color/black"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonTuoteMC1" />
@@ -134,7 +134,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO1" />
 
@@ -147,7 +147,7 @@
             android:layout_marginTop="12dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO1"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -161,7 +161,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaKO1" />
 
         <TextView
             android:id="@+id/textViewHintaText6"
@@ -172,7 +173,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO1"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO1" />
 
@@ -205,7 +206,7 @@
             android:layout_marginTop="24dp"
             android:text="Hinta Yht."
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonTuoteKO1" />
 
@@ -218,7 +219,7 @@
             android:layout_marginTop="12dp"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="36dp"
+            android:textSize="36sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -235,6 +236,17 @@
             app:elevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonTuoteKO1" />
+
+        <Button
+            android:id="@+id/jatkaShoppailua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginRight="22dp"
+            android:text="Jatka Shoppailua"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

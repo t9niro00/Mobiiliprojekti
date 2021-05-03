@@ -1,14 +1,15 @@
-package com.example.komponenttikirjasto
+package com.example.elecstore
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.komponenttikirjasto.MyPreferences
+import com.example.komponenttikirjasto.R
 import com.example.komponenttikirjasto.R.id.btn_change_theme
 
-// settings keskeneräinen, Hoitaa tällä hetkellä vain "takaisin nappulan" ja teeman vaihdoksen
+// settings, teeman vaihtamisen nappi löytyy täältä
 
 class settings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,4 +65,4 @@ class settings : AppCompatActivity() {
         dialog.show()
     }
 }
-// teema valinta dialogi
+// teema valinta dialogi, asettaa koko sovelluksen teeman

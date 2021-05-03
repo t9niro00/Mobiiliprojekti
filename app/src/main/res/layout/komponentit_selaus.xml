@@ -13,13 +13,6 @@
         android:paddingBottom="40dp"
         tools:context="">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintEnd_toStartOf="@+id/textViewTitle"
-            app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.SearchView>
-
         <ImageView
             android:id="@+id/imageViewTuotekuvaKO1"
             android:layout_width="144dp"
@@ -29,7 +22,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/buttonTuoteKO1"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaKO1" />
 
         <TextView
             android:id="@+id/textViewTuotenimiKO1"
@@ -39,7 +33,7 @@
             android:layout_marginLeft="16dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO1"
             app:layout_constraintTop_toTopOf="@+id/buttonTuoteKO1" />
 
@@ -52,7 +46,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO1"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO1" />
 
@@ -66,7 +60,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO1" />
 
@@ -80,7 +74,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO1"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaKO2" />
 
         <TextView
             android:id="@+id/textViewTuotenimiKO2"
@@ -91,7 +86,7 @@
             android:layout_marginTop="48dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO2"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO1" />
 
@@ -104,7 +99,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO2"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO2" />
 
@@ -118,7 +113,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO2" />
 
@@ -132,7 +127,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO2"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaKO3" />
 
         <TextView
             android:id="@+id/textViewTuotenimiKO3"
@@ -143,7 +139,7 @@
             android:layout_marginTop="48dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO3"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO2" />
 
@@ -156,7 +152,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO3"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO3" />
 
@@ -170,7 +166,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO3" />
 
@@ -184,7 +180,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO3"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaKO4" />
 
         <TextView
             android:id="@+id/textViewTuotenimiKO4"
@@ -195,7 +192,7 @@
             android:layout_marginTop="48dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO4"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO3" />
 
@@ -208,7 +205,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO4"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO4" />
 
@@ -222,7 +219,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO4" />
 
@@ -236,7 +233,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO4"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaKO5" />
 
         <TextView
             android:id="@+id/textViewTuotenimiKO5"
@@ -247,7 +245,7 @@
             android:layout_marginTop="48dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO5"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaKO4" />
 
@@ -260,7 +258,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaKO5"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO5" />
 
@@ -274,7 +272,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO5" />
 
@@ -284,7 +282,7 @@
             android:layout_height="116dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:insetTop="0dp"
@@ -295,7 +293,7 @@
             app:iconPadding="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/buttonTuoteKO2"

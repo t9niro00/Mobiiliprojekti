@@ -1,6 +1,7 @@
-package com.example.komponenttikirjasto
+package com.example.elecstore
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -8,14 +9,16 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.elecstore.RealtimeDatabase
-import com.google.android.gms.tasks.OnCompleteListener
+import com.example.elecstore.DatabaseKoodi.RealtimeDatabase
+import com.example.komponenttikirjasto.MainActivity
+import com.example.komponenttikirjasto.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.ostoskori.*
 
 class ostoskori2 : AppCompatActivity() {
@@ -27,12 +30,25 @@ class ostoskori2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ostoskori)
         Log.v("Höhöö", "jokumuuttuja")
-
         addBasket()
+
+        val actionBar = supportActionBar
+
+        actionBar!!.title = "Ostoskori"
+
+        actionBar.setDisplayHomeAsUpEnabled(true)
 
         button.setOnClickListener {
             Toast.makeText(applicationContext,"Tuote ostettu", Toast.LENGTH_LONG).show()
         }
+        jatkaShoppailua.setOnClickListener {
+           this.finish() //TODO sammuttaa vain sen ostoskori aktiviteetin, pitää testata muistaako tuotteita
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     fun addBasket(){
@@ -61,16 +77,15 @@ class ostoskori2 : AppCompatActivity() {
         Thread.sleep(250)
 
 
-        query.addOnCompleteListener(OnCompleteListener { task ->
-            if (task.isSuccessful){
-            Log.v("Höhöö", "perspillu")
-            jokumuuttuja = task.getResult()?.value.toString()
-            Log.v("jokumuuttuja: Val: ", jokumuuttuja)
+        query.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Log.v("Höhöö", "perspillu")
+                jokumuuttuja = task.getResult()?.value.toString()
+                Log.v("jokumuuttuja: Val: ", jokumuuttuja)
+            } else {
+                Log.v("höhöö", "Timantit on ikuisia")
+            }
         }
-        else{
-            Log.v("höhöö", "Timantit on ikuisia")
-        }
-        })
 
         Log.v("Höhöö", "6")
 

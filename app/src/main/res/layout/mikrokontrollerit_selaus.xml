@@ -13,60 +13,18 @@
         android:paddingBottom="40dp"
         tools:context="">
 
-        <EditText
-            android:id="@+id/editTextSearch2"
-            android:layout_width="268dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="84dp"
-            android:layout_marginBottom="16dp"
-            android:ems="10"
-            android:hint="Hae"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/buttonHae2"
-            android:layout_width="88dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:text="Hae"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/editTextSearch2"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTitle2" />
-
-        <TextView
-            android:id="@+id/textViewTitle2"
-            android:layout_width="365dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <ImageView
             android:id="@+id/imageViewTuotekuvaMC1"
             android:layout_width="144dp"
             android:layout_height="110dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="48dp"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonTuoteMC1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextSearch2"
+            app:layout_constraintTop_toTopOf="@+id/buttonTuoteMC1"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaMC1" />
 
         <TextView
             android:id="@+id/textViewTuotenimiMC1"
@@ -74,12 +32,11 @@
             android:layout_height="28dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="48dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC1"
-            app:layout_constraintTop_toBottomOf="@+id/editTextSearch2" />
+            app:layout_constraintTop_toTopOf="@+id/buttonTuoteMC1" />
 
         <TextView
             android:id="@+id/textViewHintaText"
@@ -90,7 +47,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC1"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC1" />
 
@@ -104,7 +61,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC1" />
 
@@ -118,7 +75,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaMC1"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaMC2" />
 
         <TextView
             android:id="@+id/textViewTuotenimiMC2"
@@ -129,7 +87,7 @@
             android:layout_marginTop="48dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC2"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaMC1" />
 
@@ -142,7 +100,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC2"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC2" />
 
@@ -156,7 +114,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC2" />
 
@@ -170,7 +128,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaMC2"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaMC3" />
 
         <TextView
             android:id="@+id/textViewTuotenimiMC3"
@@ -181,7 +140,7 @@
             android:layout_marginTop="48dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC3"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaMC2" />
 
@@ -194,7 +153,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC3"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC3" />
 
@@ -208,7 +167,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC3" />
 
@@ -222,7 +181,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaMC3"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaMC4" />
 
         <TextView
             android:id="@+id/textViewTuotenimiMC4"
@@ -233,7 +193,7 @@
             android:layout_marginTop="48dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC4"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaMC3" />
 
@@ -246,7 +206,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC4"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC4" />
 
@@ -260,7 +220,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC4" />
 
@@ -274,7 +234,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaMC4"
             app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@+id/imageViewTuotekuvaMC5" />
 
         <TextView
             android:id="@+id/textViewTuotenimiMC5"
@@ -285,7 +246,7 @@
             android:layout_marginTop="48dp"
             android:text="Nimi"
             android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC5"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuvaMC4" />
 
@@ -298,7 +259,7 @@
             android:layout_marginTop="50dp"
             android:text="Hinta:"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewTuotekuvaMC5"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC5" />
 
@@ -312,7 +273,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32dp"
+            android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiMC5" />
 
@@ -322,7 +283,7 @@
             android:layout_height="116dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:insetTop="0dp"
@@ -333,7 +294,7 @@
             app:iconPadding="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextSearch2" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/buttonTuoteMC2"

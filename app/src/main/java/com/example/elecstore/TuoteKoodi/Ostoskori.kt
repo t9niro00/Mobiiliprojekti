@@ -1,6 +1,7 @@
-package com.example.komponenttikirjasto
+package com.example.elecstore
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -8,20 +9,24 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.elecstore.RealtimeDatabase
-import com.google.android.gms.tasks.OnCompleteListener
+import com.example.elecstore.DatabaseKoodi.RealtimeDatabase
+import com.example.elecstore.DatabaseKoodi.getData
+import com.example.komponenttikirjasto.MainActivity
+import com.example.komponenttikirjasto.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.ostoskori.*
 
 //Ostoskorissa tulee näkyä valittu tuote, esim. LUL kohdassa textViewtuotenimi, hinta kohdassa TextViewtuotehinta
 //ja tuotteiden yhteishinta kohdassa textView5. Osta- painikkeesta tulee toasti, että tuote ostettu.
 class ostoskori : AppCompatActivity() {
 
+    //hakee databasesta referenssin jota käyttää
     var database = FirebaseDatabase.getInstance().getReference("Komponentit")
     var database2 = FirebaseDatabase.getInstance().getReference("Historia")
 
@@ -30,9 +35,24 @@ class ostoskori : AppCompatActivity() {
         setContentView(R.layout.ostoskori)
         addBasket()
 
+        val actionBar = supportActionBar
+
+        actionBar!!.title = "Ostoskori"
+
+        actionBar.setDisplayHomeAsUpEnabled(true)
+
         button.setOnClickListener {
             Toast.makeText(applicationContext,"Tuote ostettu", Toast.LENGTH_LONG).show()
         }
+
+        jatkaShoppailua.setOnClickListener {
+            this.finish() //TODO sammuttaa vain sen ostoskori aktiviteetin, pitää testata muistaako tuotteita
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     fun addBasket() {
@@ -55,16 +75,15 @@ class ostoskori : AppCompatActivity() {
 
         Log.v("Höhöö", jokumuuttuja)
 
-        query.addOnCompleteListener(OnCompleteListener { task ->
-            if (task.isSuccessful){
+        query.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
                 Log.v("Höhöö", "perspillu")
                 jokumuuttuja = task.getResult()?.value.toString()
                 Log.v("jokumuuttuja: Val: ", jokumuuttuja)
-            }
-            else{
+            } else {
                 Log.v("höhöö", "Timantit on ikuisia")
             }
-        })
+        }
 
         Thread.sleep(250)
 

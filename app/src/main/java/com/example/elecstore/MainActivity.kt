@@ -3,13 +3,14 @@ package com.example.komponenttikirjasto
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.preference.PreferenceManager.getDefaultSharedPreferences
+import androidx.preference.PreferenceManager.getDefaultSharedPreferences
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.bumptech.glide.Glide
-import com.example.elecstore.getData
-import com.example.elecstore.getKompoData
+import com.example.elecstore.DatabaseKoodi.getData
+import com.example.elecstore.DatabaseKoodi.getKompoData
+import com.example.elecstore.settings
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
@@ -21,17 +22,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Asetetaan databasen oksien nimet.
-
-        var name1 = "Komponentit"
-        var name2 = "Mikrokontrollerit"
-
-
         //Määritellään polku, josta lähdetään liikkeelle databasessa
 
-        var database = FirebaseDatabase.getInstance().getReference("Products")
+        FirebaseDatabase.getInstance().getReference("Products")
 
-        val storageRef = Firebase.storage.reference
+        Firebase.storage.reference
 
         //Luodaan referenssi
         val mcuRef = Firebase.storage.reference.child("Images/raspberrypi.png")
@@ -46,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             Glide.with(this)
                     .load(imageURL)
                     .into(imageView)
+            checkTheme()
 
         }
 
@@ -57,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                     .load(imageUrl)
                     .into(imageView)
 
-
+                checkTheme()
         }
 
         //Asetetaan databaseen halutut arvot koodissa.
@@ -76,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         //Asetetaan listeneri mikropiirien valintapainikkeeseen,
         //jota painaessa suoritetaan getData-luokan sisällä oleva koodi
 
+        //Toiminnallisuudet napeille joiden kautta päästään UI:ssa eteenpäin
         buttonMikropiirit.setOnClickListener {
             startActivity(Intent(applicationContext, getData::class.java))
         }
@@ -87,8 +84,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, settings::class.java)
             startActivity(intent)
         }
-
-        checkTheme()
     }
 
     private fun checkTheme() {
@@ -108,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-//kun app aukeaa tämä tarkistaa mikä teema viimeksi asetettuna ja automaattisesti ottaa tämän käyttöön
+//kun app aukeaa tämä tarkistaa mikä teema viimeksi asetettuna muistiin ja automaattisesti ottaa tämän käyttöön
 
 class MyPreferences(context: Context?) {
 
@@ -121,4 +116,4 @@ class MyPreferences(context: Context?) {
     var darkMode = preferences.getInt(DARK_STATUS, 0)
         set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
 }
-//teema haku
+//Hakee tallennetut preferenssit teemaan ja tallentaa ne

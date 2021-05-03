@@ -1,4 +1,4 @@
-package com.example.elecstore
+package com.example.elecstore.DatabaseKoodi
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.elecstore.TuoteKoodi.tuoteGet2
 import com.example.komponenttikirjasto.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -82,8 +83,7 @@ class getData : AppCompatActivity() {
         //Annetaan määritellyille muuttujille slotit, joihin liittää databasesta saatu tieto
 
 
-
-        val storageRef = Firebase.storage.reference
+        Firebase.storage.reference
 
         //Luodaan referenssi
         val raspberryRef = Firebase.storage.reference.child("Images/pi4.png")

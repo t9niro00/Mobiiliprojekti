@@ -9,15 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KomponenttiKirjasto" >
-        <activity android:name="com.example.elecstore.tuoteGet2" >
+        <activity android:name="com.example.elecstore.TuoteKoodi.tuoteGet2" >
         </activity>
-        <activity android:name=".settings" />
-        <activity
-            android:name=".komponentit_selaus"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".mikrokontrollerit_selaus"
-            android:parentActivityName=".MainActivity" />
+        <activity android:name="com.example.elecstore.settings" />
         <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,11 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.elecstore.getData" />
-        <activity android:name="com.example.elecstore.tuoteGet" />
-        <activity android:name="com.example.elecstore.getKompoData" />
-        <activity android:name=".ostoskori"/>
-        <activity android:name=".ostoskori2"/>
+        <activity android:name="com.example.elecstore.DatabaseKoodi.getData" />
+        <activity android:name="com.example.elecstore.TuoteKoodi.tuoteGet" />
+        <activity android:name="com.example.elecstore.DatabaseKoodi.getKompoData" />
+        <activity android:name="com.example.elecstore.ostoskori"/>
+        <activity android:name="com.example.elecstore.ostoskori2"/>
     </application>
 
 </manifest>

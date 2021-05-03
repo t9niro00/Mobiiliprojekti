@@ -1,4 +1,4 @@
-package com.example.elecstore
+package com.example.elecstore.DatabaseKoodi
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.elecstore.TuoteKoodi.tuoteGet
 import com.example.komponenttikirjasto.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -30,26 +31,26 @@ class getKompoData : AppCompatActivity(){
 
         buttonTuoteKO1.setOnClickListener{
             database.child("0").child("Komponenttihistoria").setValue("0")
-            startActivity(Intent(applicationContext,tuoteGet::class.java))
+            startActivity(Intent(applicationContext, tuoteGet::class.java))
         }
 
         buttonTuoteKO2.setOnClickListener {
             database.child("0").child("Komponenttihistoria").setValue("1")
-            startActivity(Intent(applicationContext,tuoteGet::class.java))
+            startActivity(Intent(applicationContext, tuoteGet::class.java))
         }
 
         buttonTuoteKO3.setOnClickListener {
             database.child("0").child("Komponenttihistoria").setValue("2")
-            startActivity(Intent(applicationContext,tuoteGet::class.java))
+            startActivity(Intent(applicationContext, tuoteGet::class.java))
         }
 
         buttonTuoteKO4.setOnClickListener {
             database.child("0").child("Komponenttihistoria").setValue("1")
-            startActivity(Intent(applicationContext,tuoteGet::class.java))
+            startActivity(Intent(applicationContext, tuoteGet::class.java))
         }
         buttonTuoteKO5.setOnClickListener {
             database.child("0").child("Komponenttihistoria").setValue("1")
-            startActivity(Intent(applicationContext,tuoteGet::class.java))
+            startActivity(Intent(applicationContext, tuoteGet::class.java))
         }
 
 
@@ -79,7 +80,7 @@ class getKompoData : AppCompatActivity(){
         val prodprice3: TextView = findViewById(R.id.textViewHintaKO3)
 
 
-        val storageRef = Firebase.storage.reference
+        Firebase.storage.reference
 
         //Luodaan referenssi
         val ledRef = Firebase.storage.reference.child("Images/leds.jpg")

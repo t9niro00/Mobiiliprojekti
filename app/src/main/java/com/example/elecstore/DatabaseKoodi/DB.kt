@@ -1,4 +1,4 @@
-package com.example.elecstore
+package com.example.elecstore.DatabaseKoodi
 
 
 import com.google.firebase.ktx.Firebase
