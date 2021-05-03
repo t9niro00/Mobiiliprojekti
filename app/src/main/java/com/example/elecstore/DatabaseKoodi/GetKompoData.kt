@@ -45,11 +45,11 @@ class getKompoData : AppCompatActivity(){
         }
 
         buttonTuoteKO4.setOnClickListener {
-            database.child("0").child("Komponenttihistoria").setValue("1")
+            database.child("0").child("Komponenttihistoria").setValue("3")
             startActivity(Intent(applicationContext, tuoteGet::class.java))
         }
         buttonTuoteKO5.setOnClickListener {
-            database.child("0").child("Komponenttihistoria").setValue("1")
+            database.child("0").child("Komponenttihistoria").setValue("4")
             startActivity(Intent(applicationContext, tuoteGet::class.java))
         }
 

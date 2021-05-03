@@ -46,11 +46,11 @@ class getData : AppCompatActivity() {
         }
 
         buttonTuoteKO4.setOnClickListener {
-            database2.child("1").child("Mikrokontrollerihistoria").setValue("1")
+            database2.child("1").child("Mikrokontrollerihistoria").setValue("3")
             startActivity(Intent(applicationContext, tuoteGet2::class.java))
         }
         buttonTuoteKO5.setOnClickListener {
-            database2.child("1").child("Mikrokontrollerihistoria").setValue("1")
+            database2.child("1").child("Mikrokontrollerihistoria").setValue("4")
             startActivity(Intent(applicationContext, tuoteGet2::class.java))
         }
 
