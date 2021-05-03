@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
             Glide.with(this)
                     .load(imageURL)
                     .into(imageView)
-            checkTheme()
 
+            checkTheme()
         }
 
         compRef.downloadUrl.addOnSuccessListener { Uri ->
