@@ -105,7 +105,7 @@ class tuoteGet2 : AppCompatActivity() {
                      }
                  }
                     if(jokumuuttuja == "1") {
-                        val prodimg1 = Firebase.storage.reference.child("Images/arduino.webp")
+                        val prodimg1 = Firebase.storage.reference.child("Images/arduinouno.png")
 
                         prodimg1.downloadUrl.addOnSuccessListener { Uri ->
                             val imageUrl = Uri.toString()
@@ -132,6 +132,33 @@ class tuoteGet2 : AppCompatActivity() {
                             .into(imageView)
                     }
                 }
+                if(jokumuuttuja == "3")
+                {
+                    val prodimg1 = Firebase.storage.reference.child("Images/arduinopromini.png")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuva54)
+
+                        Glide.with(this@tuoteGet2)
+                                .load(imageUrl)
+                                .into(imageView)
+                    }
+                }
+                if(jokumuuttuja == "4")
+                {
+                    val prodimg1 = Firebase.storage.reference.child("Images/jetson.webp")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuva54)
+
+                        Glide.with(this@tuoteGet2)
+                                .load(imageUrl)
+                                .into(imageView)
+                    }
+                }
+
                 Log.v("Kalle on hanavesigoblin", realtimeDatabase.toString())
 
             }

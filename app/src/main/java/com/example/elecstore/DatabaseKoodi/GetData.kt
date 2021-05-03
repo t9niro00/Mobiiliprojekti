@@ -91,8 +91,11 @@ class getData : AppCompatActivity() {
 
         //Luodaan referenssi
         val raspberryRef = Firebase.storage.reference.child("Images/pi4.png")
-        val arduinoRef = Firebase.storage.reference.child("Images/arduino.webp")
+        val arduinoRef = Firebase.storage.reference.child("Images/arduinouno.png")
         val edisonRef = Firebase.storage.reference.child("Images/edison.png")
+        val arduinominiRef = Firebase.storage.reference.child("Images/arduinopromini.png")
+        val jetsonRef = Firebase.storage.reference.child("Images/jetson.webp")
+
 
 
 
@@ -119,6 +122,22 @@ class getData : AppCompatActivity() {
         edisonRef.downloadUrl.addOnSuccessListener { Uri ->
             val imageUrl = Uri.toString()
             val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO3)
+
+            Glide.with(this)
+                    .load(imageUrl)
+                    .into(imageView)
+        }
+        arduinominiRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageUrl = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO4)
+
+            Glide.with(this)
+                    .load(imageUrl)
+                    .into(imageView)
+        }
+        jetsonRef.downloadUrl.addOnSuccessListener { Uri ->
+            val imageUrl = Uri.toString()
+            val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO5)
 
             Glide.with(this)
                     .load(imageUrl)

@@ -92,7 +92,7 @@ class tuoteGet : AppCompatActivity() {
 
 
                 if(jokumuuttuja <= "0") {
-                    val prodimg1 = Firebase.storage.reference.child("Images/leds.jpg")
+                    val prodimg1 = Firebase.storage.reference.child("Images/Led.png")
 
                     prodimg1.downloadUrl.addOnSuccessListener { Uri ->
                         val imageUrl = Uri.toString()
