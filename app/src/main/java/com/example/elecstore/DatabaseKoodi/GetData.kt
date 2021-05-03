@@ -79,6 +79,10 @@ class getData : AppCompatActivity() {
         val prodname3: TextView = findViewById(R.id.textViewTuotenimiKO3)
         val prodprice3: TextView = findViewById(R.id.textViewHintaKO3)
         //val prodimg3: ImageView = findViewById(R.id.imageViewTuotekuvaKO3)
+        val prodname4: TextView = findViewById(R.id.textViewTuotenimiKO4)
+        val prodprice4: TextView = findViewById(R.id.textViewHintaKO4)
+        val prodname5: TextView = findViewById(R.id.textViewTuotenimiKO5)
+        val prodprice5: TextView = findViewById(R.id.textViewHintaKO5)
 
         //Annetaan määritellyille muuttujille slotit, joihin liittää databasesta saatu tieto
 
@@ -138,12 +142,20 @@ class getData : AppCompatActivity() {
                     val realtimeDatabase = p0.child("0").getValue(RealtimeDatabase::class.java)
                     val realtimeDatabase2 = p0.child("1").getValue(RealtimeDatabase::class.java)
                     val realtimeDatabase3 = p0.child("2").getValue(RealtimeDatabase::class.java)
+                    val realtimeDatabase4 = p0.child("3").getValue(RealtimeDatabase::class.java)
+                    val realtimeDatabase5 = p0.child("4").getValue(RealtimeDatabase::class.java)
                     prodname1.text = realtimeDatabase?.prodname
                     prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
                     prodname2.text = realtimeDatabase2?.prodname
                     prodprice2.text = realtimeDatabase2?.prodprice.toString() + "€"
                     prodname3.text = realtimeDatabase3?.prodname
                     prodprice3.text = realtimeDatabase3?.prodprice.toString() + "€"
+                    prodname4.text = realtimeDatabase4?.prodname
+                    prodprice4.text = realtimeDatabase4?.prodprice.toString() + "€"
+                    prodname5.text = realtimeDatabase5?.prodname
+                    prodprice5.text = realtimeDatabase5?.prodprice.toString() + "€"
+
+
                 }
 
             })
