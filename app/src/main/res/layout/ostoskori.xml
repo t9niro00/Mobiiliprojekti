@@ -16,9 +16,11 @@
             android:id="@+id/textView"
             android:layout_width="160dp"
             android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginRight="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:text="Ostoskori"
             android:textColor="@color/black"
             android:textSize="30sp"
@@ -78,7 +80,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:srcCompat="@drawable/ic_launcher_foreground"
             tools:ignore="VectorDrawableCompat"
-            android:contentDescription="@+id/imageViewTuotekuvaMC1" />
+            android:contentDescription="@+id/imageViewTuotekuvaMC1"/>
 
         <TextView
             android:id="@+id/textViewHintaTextMC6"
@@ -134,7 +136,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="32sp"
+            android:textSize="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimiKO1" />
 
@@ -162,7 +164,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             app:srcCompat="@drawable/ic_launcher_foreground"
             tools:ignore="VectorDrawableCompat"
-            android:contentDescription="@+id/imageViewTuotekuvaKO1" />
+            android:contentDescription="@+id/imageViewTuotekuvaKO1"/>
 
         <TextView
             android:id="@+id/textViewHintaText6"
@@ -183,7 +185,7 @@
             android:layout_height="116dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:insetTop="0dp"
@@ -193,7 +195,6 @@
             app:elevation="0dp"
             app:iconPadding="0dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -241,10 +242,10 @@
             android:id="@+id/jatkaShoppailua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="22dp"
-            android:layout_marginRight="22dp"
-            android:text="Jatka Shoppailua"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginRight="19dp"
+            android:text="Jatka shoppailua"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
