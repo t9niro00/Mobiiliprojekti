@@ -82,7 +82,7 @@ class ostoskori : AppCompatActivity() {
             }
         }
 
-        Thread.sleep(250)
+        Thread.sleep(500)
 
         database.addValueEventListener(object : ValueEventListener {
             @SuppressLint("ShowToast")
