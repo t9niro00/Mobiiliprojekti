@@ -114,7 +114,7 @@ class ostoskori2 : AppCompatActivity() {
 
                     prodimg1.downloadUrl.addOnSuccessListener { Uri ->
                         val imageUrl = Uri.toString()
-                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaMC1)
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO1)
 
 
                         Glide.with(this@ostoskori2)
@@ -128,7 +128,7 @@ class ostoskori2 : AppCompatActivity() {
 
                     prodimg1.downloadUrl.addOnSuccessListener { Uri ->
                         val imageUrl = Uri.toString()
-                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaMC1)
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO1)
 
 
                         Glide.with(this@ostoskori2)
@@ -144,7 +144,7 @@ class ostoskori2 : AppCompatActivity() {
 
                     prodimg1.downloadUrl.addOnSuccessListener { Uri ->
                         val imageUrl = Uri.toString()
-                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaMC1)
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaKO1)
 
                         Glide.with(this@ostoskori2)
                                 .load(imageUrl)
