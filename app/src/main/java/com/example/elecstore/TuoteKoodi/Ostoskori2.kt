@@ -178,8 +178,6 @@ class ostoskori2 : AppCompatActivity() {
 
 
 
-
-
             }
 
         })
