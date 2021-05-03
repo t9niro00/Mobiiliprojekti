@@ -72,7 +72,7 @@ class ostoskori2 : AppCompatActivity() {
 
         Log.v("Höhöö", "5")
 
-        Thread.sleep(250)
+        Thread.sleep(500)
 
 
         query.addOnCompleteListener { task ->
