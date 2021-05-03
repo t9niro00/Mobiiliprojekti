@@ -87,7 +87,7 @@ class getKompoData : AppCompatActivity(){
         Firebase.storage.reference
 
         //Luodaan referenssi
-        val ledRef = Firebase.storage.reference.child("Images/leds.jpg")
+        val ledRef = Firebase.storage.reference.child("Images/Led.png")
         val wireRef = Firebase.storage.reference.child("Images/wires.png")
         val resistorRef = Firebase.storage.reference.child("Images/resistor.png")
         val capacitorRef = Firebase.storage.reference.child("Images/capacitor.png")
@@ -121,6 +121,7 @@ class getKompoData : AppCompatActivity(){
             Glide.with(this)
                 .load(imageUrl)
                 .into(imageView)
+
         }
         capacitorRef.downloadUrl.addOnSuccessListener { Uri ->
             val imageUrl = Uri.toString()

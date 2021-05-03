@@ -1,7 +1,6 @@
 package com.example.elecstore
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -10,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.elecstore.DatabaseKoodi.RealtimeDatabase
-import com.example.komponenttikirjasto.MainActivity
 import com.example.komponenttikirjasto.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -124,7 +122,7 @@ class ostoskori2 : AppCompatActivity() {
                     }
                 }
                 if(jokumuuttuja == "1") {
-                    val prodimg1 = Firebase.storage.reference.child("Images/arduino.webp")
+                    val prodimg1 = Firebase.storage.reference.child("Images/arduinouno.png")
 
                     prodimg1.downloadUrl.addOnSuccessListener { Uri ->
                         val imageUrl = Uri.toString()
@@ -151,6 +149,34 @@ class ostoskori2 : AppCompatActivity() {
                                 .into(imageView)
                     }
                 }
+                if(jokumuuttuja == "3")
+                {
+                    val prodimg1 = Firebase.storage.reference.child("Images/arduinopromini.png")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaMC1)
+
+                        Glide.with(this@ostoskori2)
+                                .load(imageUrl)
+                                .into(imageView)
+                    }
+                }
+                if(jokumuuttuja == "4")
+                {
+                    val prodimg1 = Firebase.storage.reference.child("Images/jetson.webp")
+
+                    prodimg1.downloadUrl.addOnSuccessListener { Uri ->
+                        val imageUrl = Uri.toString()
+                        val imageView = findViewById<ImageView>(R.id.imageViewTuotekuvaMC1)
+
+                        Glide.with(this@ostoskori2)
+                                .load(imageUrl)
+                                .into(imageView)
+                    }
+                }
+
+
 
 
 
