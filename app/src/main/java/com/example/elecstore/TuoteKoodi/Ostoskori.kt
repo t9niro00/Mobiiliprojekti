@@ -59,6 +59,12 @@ class ostoskori : AppCompatActivity() {
         val rentprod1: TextView = findViewById(R.id.textViewTuotenimiMC1)
         val rentprice1: TextView = findViewById(R.id.textViewHintaMC1)
 
+        val sum: TextView = findViewById(R.id.textView5)
+
+
+
+
+
         rentprod1.text = "Vuokratuote"
         rentprice1.text = 10.0.toString() + "€"
 
@@ -102,6 +108,9 @@ class ostoskori : AppCompatActivity() {
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
                 Log.v("Kalle on hanavesigoblin", realtimeDatabase.toString())
                 Log.v("Höhöööööö", jokumuuttuja)
+                sum.text = realtimeDatabase?.prodprice.toString() + "€"
+
+
 
                 //Määritetään jokumuuttajan arvon mukaan kuva
                 if(jokumuuttuja == "0") {

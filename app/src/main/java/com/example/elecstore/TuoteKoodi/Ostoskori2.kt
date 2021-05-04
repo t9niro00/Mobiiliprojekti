@@ -66,6 +66,7 @@ class ostoskori2 : AppCompatActivity() {
         val rentprod1: TextView = findViewById(R.id.textViewTuotenimiMC1)
         val rentprice1: TextView = findViewById(R.id.textViewHintaMC1)
 
+
         rentprod1.text = "Vuokratuote"
         rentprice1.text = 10.0.toString() + "€"
 
@@ -105,6 +106,7 @@ class ostoskori2 : AppCompatActivity() {
                 prodprice1.text = realtimeDatabase?.prodprice.toString() + "€"
                 Log.v("Kalle on hanavesigoblin", realtimeDatabase.toString())
                 Log.v("jokumuuttuja: Val: ", jokumuuttuja)
+                sum.text = realtimeDatabase?.prodprice.toString() + "€"
 
 
                 if(jokumuuttuja == "0") {
