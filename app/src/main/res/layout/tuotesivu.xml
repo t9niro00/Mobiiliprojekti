@@ -39,8 +39,8 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="Tuotenimi"
-            android:textColor="@color/black"
-            android:textSize="30dp"
+            android:textColor = "?android:textColorPrimary"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewTuotekuva54" />
@@ -52,9 +52,13 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:text="Hinta"
-            android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textColor = "?android:textColorPrimary"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHinta"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimi" />
 
@@ -68,7 +72,7 @@
             android:gravity="end"
             android:text="X.YY€"
             android:textColor="#3CB043"
-            android:textSize="36dp"
+            android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotenimi" />
 
@@ -79,9 +83,13 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:text="Saatavuus:"
-            android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textColor = "?android:textColorPrimary"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewSaatavuus"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewHintaText" />
 
@@ -94,8 +102,8 @@
             android:layout_marginRight="16dp"
             android:gravity="end"
             android:text="X kpl"
-            android:textColor="@color/black"
-            android:textSize="22dp"
+            android:textColor = "?android:textColorPrimary"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewHinta" />
 
@@ -107,7 +115,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="datasheet linkki"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:gravity="end"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewSaatavuus" />
@@ -119,9 +127,13 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="22dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:text="Tuotekuvaus"
-            android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textColor = "?android:textColorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewDatasheet"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewSaatavuusText" />
 
@@ -132,9 +144,13 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:text="Tuotekuvaus Tuotekuvaus Tuotekuvaus Tuotekuvaus Tuotekuvaus Tuotekuvaus Tuotekuvaus Tuotekuvaus Tuotekuvaus Tuotekuvaus Tuotekuvaus Tuotekuvaus "
-            android:textSize="14dp"
-            android:textColor="@color/black"
+            android:textColor = "?android:textColorPrimary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonLisaaOstoskoriin"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTuotekuvausTitle" />
 
@@ -148,7 +164,7 @@
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="Lisää Ostoskoriin"
-            android:textSize="10dp"
+            android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewDatasheet" />
 
