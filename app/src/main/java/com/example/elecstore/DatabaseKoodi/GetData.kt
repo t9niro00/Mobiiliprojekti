@@ -30,6 +30,9 @@ class getData : AppCompatActivity() {
         setContentView(R.layout.komponentit_selaus)
         getData()
 
+        //Jokaiselle buttonille oma listeneri clickeille, jotta saadaan asetettua oikea
+        //arvo mikrokontrollerihistoriaan databaseen.
+
         buttonTuoteKO1.setOnClickListener{
             database2.child("1").child("Mikrokontrollerihistoria").setValue("0")
             startActivity(Intent(applicationContext, tuoteGet2::class.java))

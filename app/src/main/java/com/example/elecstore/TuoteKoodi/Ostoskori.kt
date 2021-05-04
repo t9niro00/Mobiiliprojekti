@@ -19,11 +19,11 @@ import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.ostoskori.*
 
-//Ostoskorissa tulee näkyä valittu tuote, esim. LUL kohdassa textViewtuotenimi, hinta kohdassa TextViewtuotehinta
+//Ostoskorissa tulee näkyä valittu tuote kohdassa textViewtuotenimi, hinta kohdassa TextViewtuotehinta
 //ja tuotteiden yhteishinta kohdassa textView5. Osta- painikkeesta tulee toasti, että tuote ostettu.
 class ostoskori : AppCompatActivity() {
 
-    //hakee databasesta referenssin jota käyttää
+    //hakee databasesta referenssit jota käyttää
     var database = FirebaseDatabase.getInstance().getReference("Komponentit")
     var database2 = FirebaseDatabase.getInstance().getReference("Historia")
 
@@ -54,6 +54,8 @@ class ostoskori : AppCompatActivity() {
 
     fun addBasket() {
 
+        //Määritellään tuotteille muuttujat ja muuttujille slotit, joihin tiedot kirjataan XML-tiedostossa.
+
         val prodname1: TextView = findViewById(R.id.textViewTuotenimiKO1)
         val prodprice1: TextView = findViewById(R.id.textViewHintaKO1)
         val rentprod1: TextView = findViewById(R.id.textViewTuotenimiMC1)
@@ -62,21 +64,22 @@ class ostoskori : AppCompatActivity() {
         val sum: TextView = findViewById(R.id.textView5)
 
 
-
-
-
         rentprod1.text = "Vuokratuote"
         rentprice1.text = 10.0.toString() + "€"
 
-
+        //Logit on debuggausvaiheita varten.
 
         Log.v("Höhöö", "jokumuuttuja")
+
+        //Query hakee viimeisimmän valinnan Databasesta komponenttihistorian perusteella.
 
         val query = database2.child("0").child("Komponenttihistoria").get()
 
         var jokumuuttuja = ""
 
         Log.v("Höhöö", jokumuuttuja)
+
+        //Kun query on suoritettu, liitetään muuttujaan "jokumuuttuja" viimeinen saatu arvo databasesta
 
         query.addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -88,7 +91,12 @@ class ostoskori : AppCompatActivity() {
             }
         }
 
+        //Piti lisätä sleep, jottei ohjelma kaadu siihen, ettei firebasesta olla keretty hakea tietoa.
+        //Olisi mahdollisesti voitu korjata siirtämällä tiedon haku tapahtumaan eri threadissa.
+
         Thread.sleep(500)
+
+        //Jos ei onnistu niin kirjoitetaan lokia
 
         database.addValueEventListener(object : ValueEventListener {
             @SuppressLint("ShowToast")
@@ -97,7 +105,6 @@ class ostoskori : AppCompatActivity() {
             }
 
             //Määritellään mistä puusta haetaan data
-
             @SuppressLint("SetTextI18n")
             override fun onDataChange(p0: DataSnapshot) {
                 while (jokumuuttuja.isEmpty()) {

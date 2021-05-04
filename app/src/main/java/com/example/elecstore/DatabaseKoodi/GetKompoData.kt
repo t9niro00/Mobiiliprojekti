@@ -29,6 +29,9 @@ class getKompoData : AppCompatActivity(){
         setContentView(R.layout.komponentit_selaus)
         getData()
 
+        //Jokaiselle buttonille oma listeneri clickeille, jotta saadaan asetettua oikea
+        //arvo komponenttihistoriaan databaseen.
+
         buttonTuoteKO1.setOnClickListener{
             database.child("0").child("Komponenttihistoria").setValue("0")
             startActivity(Intent(applicationContext, tuoteGet::class.java))

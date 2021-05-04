@@ -19,8 +19,11 @@ import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.ostoskori.*
 
+//Ostoskorissa tulee näkyä valittu tuote kohdassa textViewtuotenimi, hinta kohdassa TextViewtuotehinta
+//ja tuotteiden yhteishinta kohdassa textView5. Osta- painikkeesta tulee toasti, että tuote ostettu.
 class ostoskori2 : AppCompatActivity() {
 
+    //hakee databasesta referenssit jota käyttää
     var database = FirebaseDatabase.getInstance().getReference("Mikrokontrollerit")
     var database2 = FirebaseDatabase.getInstance().getReference("Historia")
 
@@ -51,7 +54,7 @@ class ostoskori2 : AppCompatActivity() {
 
     fun addBasket(){
 
-
+        //Määritellään tuotteille muuttujat ja muuttujille slotit, joihin tiedot kirjataan XML-tiedostossa.
 
         Log.v("Höhöö", "1")
         val prodname1: TextView = findViewById(R.id.textViewTuotenimiKO1)
@@ -59,6 +62,7 @@ class ostoskori2 : AppCompatActivity() {
         val prodprice1: TextView = findViewById(R.id.textViewHintaKO1)
         var jokumuuttuja = ""
         Log.v("Höhöö", "3")
+        //Query hakee viimeisimmän valinnan Databasesta mikrokontrollerihistorian perusteella.
         val query = database2.child("1").child("Mikrokontrollerihistoria").get()
         Log.v("Höhöö", "4")
         val sum: TextView = findViewById(R.id.textView5)
@@ -75,6 +79,7 @@ class ostoskori2 : AppCompatActivity() {
 
         Thread.sleep(500)
 
+        //Kun query on suoritettu, liitetään muuttujaan "jokumuuttuja" viimeinen saatu arvo databasesta
 
         query.addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -86,7 +91,12 @@ class ostoskori2 : AppCompatActivity() {
             }
         }
 
+        //Piti lisätä sleep, jottei ohjelma kaadu siihen, ettei firebasesta olla keretty hakea tietoa.
+        //Olisi mahdollisesti voitu korjata siirtämällä tiedon haku tapahtumaan eri threadissa.
+
         Log.v("Höhöö", "6")
+
+        //Jos ei onnistu niin kirjoitetaan lokia
 
         database.addValueEventListener(object : ValueEventListener {
             @SuppressLint("ShowToast")
